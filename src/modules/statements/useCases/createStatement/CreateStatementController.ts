@@ -8,6 +8,8 @@ enum OperationType {
   WITHDRAW = 'withdraw',
 }
 
+export {OperationType}
+
 export class CreateStatementController {
   async execute(request: Request, response: Response) {
     const { id: user_id } = request.user;
