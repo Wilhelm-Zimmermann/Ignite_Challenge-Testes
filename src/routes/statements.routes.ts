@@ -13,8 +13,11 @@ const getStatementOperationController = new GetStatementOperationController();
 statementRouter.use(ensureAuthenticated);
 
 statementRouter.get('/balance', getBalanceController.execute);
+statementRouter.get('/:statement_id', getStatementOperationController.execute);
+
+
 statementRouter.post('/deposit', createStatementController.execute);
 statementRouter.post('/withdraw', createStatementController.execute);
-statementRouter.get('/:statement_id', getStatementOperationController.execute);
+statementRouter.post('/:receiver_id/transfer',createStatementController.execute);
 
 export { statementRouter };
